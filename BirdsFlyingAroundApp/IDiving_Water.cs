@@ -8,9 +8,6 @@ namespace BirdsFlyingAroundApp
 {
     internal interface IDiving_Water
     {
-        internal int Depth { get; set; }
-        internal int DiveTime { get; set; }
-
-        void Diving();
+        public void Diving();
     }
 }

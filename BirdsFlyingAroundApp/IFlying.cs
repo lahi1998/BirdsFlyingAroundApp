@@ -8,9 +8,6 @@ namespace BirdsFlyingAroundApp
 {
     internal interface IFlying
     {
-        internal int Height { get; set; }
-        internal int FlightTime { get; set; }
-
-        void Fly();
+        public void Fly();
     }
 }

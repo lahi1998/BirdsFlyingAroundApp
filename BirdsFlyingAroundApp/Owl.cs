@@ -8,5 +8,48 @@ namespace BirdsFlyingAroundApp
 {
     internal class Owl : Birds, IFlying
     {
+        public int HUNGER
+        {
+            get { return Hunger; }
+            set { Hunger = value; }
+        }
+
+        public Owl(int hunger)
+        {
+            HUNGER = hunger;
+        }
+        public void Fly()
+        {
+            if (Hunger < 50)
+            {
+                Console.Clear();
+                Console.WriteLine("Owl flyes around looking for food.");
+                Thread.Sleep(1500);
+                Eat();
+            }
+        }
+
+        public override void Eat()
+        {
+            Console.Clear();
+            Hunger = Hunger + 23;
+            Console.WriteLine("Owl eats a mouse.");
+            Thread.Sleep(1500);
+        }
+
+        public override void Walk()
+        {
+            Console.Clear();
+            Console.WriteLine("Owl walks around.");
+            Thread.Sleep(1500);
+            Hunger = Hunger - 15;
+        }
+
+        public override void Sound()
+        {
+            Console.Clear();
+            Console.WriteLine("hooh hoot!!");
+            Thread.Sleep(1500);
+        }
     }
 }

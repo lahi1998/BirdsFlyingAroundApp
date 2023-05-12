@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BirdsFlyingAroundApp
 {
-    internal class Duck : Birds, IFlying, IDiving_Water
+    internal class Seagull : Birds, IFlying
     {
         public int HUNGER
         {
@@ -15,24 +14,17 @@ namespace BirdsFlyingAroundApp
             set { Hunger = value; }
         }
 
-        public Duck(int hunger)
+        public Seagull(int hunger)
         {
             HUNGER = hunger;
         }
 
         public void Fly()
         {
-            Console.Clear();
-            Console.WriteLine("Duck Flyes to new area.");
-            Thread.Sleep(1500);
-        }
-
-        public void Diving()
-        {
             if (Hunger < 50)
             {
                 Console.Clear();
-                Console.WriteLine("Duck dives for food");
+                Console.WriteLine("Seagull flyes around looking for food.");
                 Thread.Sleep(1500);
                 Eat();
             }
@@ -42,14 +34,14 @@ namespace BirdsFlyingAroundApp
         {
             Console.Clear();
             Hunger = Hunger + 23;
-            Console.WriteLine("Duck eats.");
+            Console.WriteLine("Seagull eats trash.");
             Thread.Sleep(1500);
         }
 
         public override void Walk()
         {
             Console.Clear();
-            Console.WriteLine("Duck walks around.");
+            Console.WriteLine("Seagull walks around.");
             Thread.Sleep(1500);
             Hunger = Hunger - 15;
         }
@@ -57,7 +49,7 @@ namespace BirdsFlyingAroundApp
         public override void Sound()
         {
             Console.Clear();
-            Console.WriteLine("Quak Quak!!");
+            Console.WriteLine("squawk squawk!!");
             Thread.Sleep(1500);
         }
     }
